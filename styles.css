@@ -29,8 +29,9 @@ body {
 
 header div {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-bottom: 10rem;
+  align-items: center;
   padding: 2rem;
 }
 
@@ -98,7 +99,7 @@ p {
 .game-details {
   padding: 0 2rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .game-play {
   display: flex;

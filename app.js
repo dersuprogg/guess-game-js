@@ -9,42 +9,47 @@ const guessInput = document.querySelector(".guess");
 const msg = document.querySelector(".msg");
 const scoreText = document.querySelector(".score");
 const highScore = document.querySelector(".high-score");
-
+const body = document.querySelector("body");
 // GENERATE RANDOM/SECRET NUMBER
 let secretNum = Math.floor(Math.random() * 20) + 1;
 
 // IMPLEMENT GAME LOGIC: CHECK GUESSED NUMBER AGAINST SECRET NUMBER
 let score = 20;
 
+function displayText(txt) {
+  msg.textContent = txt;
+}
+
 guessBtn.addEventListener("click", function () {
   const guessNum = Number(guessInput.value);
   // CHECK IF THE USER INPUT IS A NUMBER
   if (!guessNum) {
-    msg.textContent = "⚠️ Enter a number!";
+    displayText("⚠️ Enter a number!");
   } else {
     if (guessNum > secretNum) {
-      msg.textContent = "📈 Too high...";
+      displayText("📈 Too high...");
       score--;
       scoreText.textContent = score;
     } else if (guessNum < secretNum) {
-      msg.textContent = "📉 Too low ...";
+      displayText("📉 Too low ...");
       score--;
       scoreText.textContent = score;
     } else {
-      msg.textContent = "🎉 You win!";
+      displayText("🎉 You win!");
       board.textContent = secretNum;
+      body.style.backgroundColor = "#65B741";
       if (score >= highScore.textContent) {
         highScore.textContent = score;
       }
     }
-    console.log(Number.isNaN(guessNum));
   }
 });
 
 againBtn.addEventListener("click", function () {
   score = 20;
   scoreText.textContent = score;
-  msg.textContent = "Start guessing...";
+  displayText("Start guessing...");
   secretNum = Math.floor(Math.random() * 20) + 1;
+  body.style.backgroundColor = "2b2a33";
   board.textContent = "?";
 });
