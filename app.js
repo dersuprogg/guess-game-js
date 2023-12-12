@@ -26,21 +26,26 @@ guessBtn.addEventListener("click", function () {
   if (!guessNum) {
     displayText("⚠️ Enter a number!");
   } else {
-    if (guessNum > secretNum) {
-      displayText("📈 Too high...");
-      score--;
-      scoreText.textContent = score;
-    } else if (guessNum < secretNum) {
-      displayText("📉 Too low ...");
-      score--;
-      scoreText.textContent = score;
-    } else {
-      displayText("🎉 You win!");
-      board.textContent = secretNum;
-      body.style.backgroundColor = "#65B741";
-      if (score >= highScore.textContent) {
-        highScore.textContent = score;
+    // CHECK IF THE USER HAS LEFT ANY ATTEMPTS
+    if (score > 1) {
+      if (guessNum > secretNum) {
+        displayText("📈 Too high...");
+        score--;
+        scoreText.textContent = score;
+      } else if (guessNum < secretNum) {
+        displayText("📉 Too low ...");
+        score--;
+        scoreText.textContent = score;
+      } else {
+        displayText("🎉 You win!");
+        board.textContent = secretNum;
+        body.style.backgroundColor = "#65B741";
+        if (score >= highScore.textContent) {
+          highScore.textContent = score;
+        }
       }
+    } else {
+      displayText("😭 You lose...");
     }
   }
 });
@@ -50,6 +55,6 @@ againBtn.addEventListener("click", function () {
   scoreText.textContent = score;
   displayText("Start guessing...");
   secretNum = Math.floor(Math.random() * 20) + 1;
-  body.style.backgroundColor = "2b2a33";
+  body.style.backgroundColor = "#2b2a33";
   board.textContent = "?";
 });
