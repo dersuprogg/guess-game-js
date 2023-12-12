@@ -1,3 +1,7 @@
+/* ************** */
+/* GENERAL STYLES */
+/* ************** */
+
 * {
   margin: 0;
   padding: 0;
@@ -19,6 +23,10 @@ body {
   color: #f6f6f6;
 }
 
+/* ************* */
+/* HEADER STYLES */
+/* ************* */
+
 header div {
   display: flex;
   justify-content: space-between;
@@ -33,6 +41,10 @@ header h1 {
   font-weight: bold;
   margin-bottom: 10rem;
 }
+
+/* ******************* */
+/* MAIN SECTION STYLES */
+/* ******************* */
 
 .line {
   border: 5px solid #fff;
@@ -58,6 +70,10 @@ p {
   color: #fec260;
 }
 
+/* ************* */
+/* BUTTON STYLES */
+/* ************* */
+
 .btn {
   background-color: #0e8388;
   border: none;
@@ -74,6 +90,11 @@ p {
   box-shadow: 0 0 8px 2px #0e8388;
   cursor: pointer;
 }
+
+/* ************************ */
+/* GAME PLAY SECTION STYLES */
+/* ************************ */
+
 .game-details {
   padding: 0 2rem;
   display: flex;
